@@ -1,0 +1,26 @@
+
+<input class="form-control mr-sm-2" class="serach" type="text" placeholder="Search" [(ngModel)]="p">
+<div class="container">
+
+
+   <div class="row">
+      <div *ngFor="let item of newPost | filter : p" class="col-12">
+         <div class="post">
+            <h2>{{item.title}}</h2>
+            <hr>
+            <p>{{item.body}}</p>
+         </div>
+      </div>
+   </div>
+
+
+   <div class="row">
+      <div *ngFor="let item of posts | filter: p" class="col-12">
+         <div class="post">
+            <h2>{{item.title}}</h2>
+            <hr>
+            <p>{{item.body}}</p>
+         </div>
+      </div>
+   </div>
+</div>

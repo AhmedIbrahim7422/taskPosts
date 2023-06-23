@@ -1,0 +1,20 @@
+<div class="container">
+    <form class="col-sm-12 col-lg-6" [formGroup]="addPost" (ngSubmit)="newpost()">
+        <div class="form-group">
+            <label for="">Title:</label>
+            <input type="text" placeholder="Title for the new post" formControlName="title" required>
+            <span style="color: red;" *ngIf="addPost.get('title')?.touched && addPost.get('title')?.hasError('required')">Enter Title</span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="">Content:</label> 
+            <br>
+            <textarea required formControlName="body"></textarea>
+            <span style="color: red;" *ngIf="addPost.get('body')?.touched && addPost.get('body')?.hasError('required')">Enter Content</span>
+        </div>
+        <button type="submit"  class="btn btn-primary" [disabled]="!addPost.valid"> 
+            post
+        </button>
+
+    </form>
+</div>

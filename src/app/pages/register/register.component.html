@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 align="center">Register</h2>
+    <form class="col-sm-12 col-lg-6" [formGroup]="registerForm" (ngSubmit)="register()">
+        <label for="">
+            Username:
+        </label> 
+        <br>
+        <input type="text" formControlName="username"> <br>
+        <br>
+        <label for="">Password:</label>
+         <br>
+        <input type="password" formControlName="password">
+         <br> <br>
+        <label>Confirm Password:</label> 
+        <br>
+        <input type="password" formControlName="confirmPassword">
+        <br>
+        <span style="color: red;" *ngIf="registerForm.hasError('mismatch')">Password does not match</span>
+         <br> <br>
+        <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid">Register</button>
+    </form>
+</div>

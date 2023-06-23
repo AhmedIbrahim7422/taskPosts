@@ -1,0 +1,15 @@
+<div class="container">
+    <h2 align="center">Login</h2>
+    <form class="col-md-12 col-lg-6" [formGroup]="loginForm" (ngSubmit)="login()">
+        <p *ngIf="failed" style="color: red;" align="center">worng username or password</p>
+        <label for="">
+            Username:
+        </label> <br>
+        <input type="text" formControlName="username" required> <br>
+        <br>
+        <label for="">Password:</label> <br>
+        <input type="password" formControlName="password" required> <br> <br>
+        <button class="btn btn-primary" type="submit" [disabled]="!loginForm .valid">Login</button> &nbsp; &nbsp; 
+        <button class="btn btn-primary" [routerLink]="['/landing/register']" >Register</button>
+    </form>
+</div>
